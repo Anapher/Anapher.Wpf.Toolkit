@@ -205,7 +205,5 @@ namespace Anapher.Wpf.Toolkit.StatusBar
                 status.Dispose();
             else Task.Delay(diff).ContinueWith(_ => status.Dispose());
         }
-
-        //TODO catch error
     }
 }
