@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Anapher.Wpf.Toolkit.Metro;component/Resources/Icons.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Anapher.Wpf.Toolkit.Metro;component/Resources/MetroWindow.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Anapher.Wpf.Toolkit.Metro;component/Resources/StatusBar.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

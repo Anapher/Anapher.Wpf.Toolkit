@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="DialogBottomColor">#FF2B2B2B</Color>
+    <SolidColorBrush x:Key="DialogBottomBrush" Color="{StaticResource DialogBottomColor}" />
+    <Color x:Key="WindowButtonColor">#3c3c3c</Color>
+
+    <!--  Visual Studio Icons  -->
+    <SolidColorBrush x:Key="HaloBrush" Color="#252525" />
+    <SolidColorBrush x:Key="LightBrush1" Color="#FF2A272D" />
+    <SolidColorBrush x:Key="LightBrush2" Color="#38343b" />
+    <SolidColorBrush x:Key="DarkBrush1" Color="#c5c5c5" />
+    <SolidColorBrush x:Key="DarkBrush2" Color="#FFC5C5C5" />
+    <SolidColorBrush x:Key="IconBlueBrush1" Color="#74BEFF" />
+    <SolidColorBrush x:Key="IconBlueBrush2" Color="#75beff" />
+</ResourceDictionary>
