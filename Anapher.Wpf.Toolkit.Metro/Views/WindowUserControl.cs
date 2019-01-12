@@ -73,7 +73,7 @@ namespace Anapher.Wpf.Toolkit.Metro.Views
                     viewManager.DialogResult = (bool?) args.NewValue;
             }));
 
-        public static readonly DependencyProperty ShowInTaskBarProperty = DependencyProperty.Register("ShowInTaskBar",
+        public static readonly DependencyProperty ShowInTaskbarProperty = DependencyProperty.Register("ShowInTaskbar",
             typeof(bool), typeof(WindowUserControl),
             new PropertyMetadata(default(bool), (o, args) =>
             {
@@ -127,8 +127,8 @@ namespace Anapher.Wpf.Toolkit.Metro.Views
             if (taskBarIcon != default)
                 viewManager.TaskBarIcon = taskBarIcon;
 
-            var showInTaskbar = ShowInTaskBar;
-            if (showInTaskbar != default)
+            var showInTaskbar = ShowInTaskbar;
+            if (showInTaskbar != true)
                 viewManager.ShowInTaskbar = showInTaskbar;
 
             var dialogResult = DialogResult;
@@ -196,10 +196,10 @@ namespace Anapher.Wpf.Toolkit.Metro.Views
             set => SetValue(TaskBarIconProperty, value);
         }
 
-        public bool ShowInTaskBar
+        public bool ShowInTaskbar
         {
-            get => (bool)GetValue(ShowInTaskBarProperty);
-            set => SetValue(ShowInTaskBarProperty, value);
+            get => (bool)GetValue(ShowInTaskbarProperty);
+            set => SetValue(ShowInTaskbarProperty, value);
         }
 
         public bool? DialogResult
