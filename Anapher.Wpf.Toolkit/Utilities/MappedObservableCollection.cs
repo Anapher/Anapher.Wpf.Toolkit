@@ -47,15 +47,18 @@ namespace Anapher.Wpf.Toolkit.Utilities
                 case NotifyCollectionChangedAction.Add:
                 case NotifyCollectionChangedAction.Remove:
                 case NotifyCollectionChangedAction.Replace:
-                    foreach (var model in e.NewItems.Cast<TModel>()) Add(CreateViewModel(model));
+                    if(e.NewItems != null)
+                        foreach (var model in e.NewItems.Cast<TModel>())
+                            Add(CreateViewModel(model));
 
-                    foreach (var model in e.OldItems.Cast<TModel>())
-                    {
-                        var viewModel = _viewModels[model];
-                        _viewModels.Remove(model);
+                    if(e.OldItems != null)
+                        foreach (var model in e.OldItems.Cast<TModel>())
+                        {
+                            var viewModel = _viewModels[model];
+                            _viewModels.Remove(model);
 
-                        Remove(viewModel);
-                    }
+                            Remove(viewModel);
+                        }
                     break;
                 case NotifyCollectionChangedAction.Reset:
                     Clear();

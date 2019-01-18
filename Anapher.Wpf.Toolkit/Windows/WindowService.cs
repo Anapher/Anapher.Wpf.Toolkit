@@ -16,16 +16,17 @@ namespace Anapher.Wpf.Toolkit.Windows
         private readonly IUnityContainer _container;
         private readonly IShellWindowFactory _shellWindowFactory;
         private readonly IViewModelResolver _viewModelResolver;
-        private readonly IWindow _window;
 
         public WindowService(IUnityContainer container, IViewModelResolver viewModelResolver,
             IShellWindowFactory shellWindowFactory, IWindow window)
         {
-            _window = window;
+            Window = window;
             _viewModelResolver = viewModelResolver;
             _container = container;
             _shellWindowFactory = shellWindowFactory;
         }
+
+        public IWindow Window { get; }
 
         private IShellWindow Initialize(Type viewModelType, Action<object> configureViewModel,
             Action<IShellWindow> configureWindow, Action<IUnityContainer> setupContainer, out object viewModel)
@@ -118,7 +119,7 @@ namespace Anapher.Wpf.Toolkit.Windows
         {
             var window = Initialize(viewModelType, configureViewModel, configureWindow, configureContainer,
                 out viewModel);
-            return window.ShowDialog(_window);
+            return window.ShowDialog(Window);
         }
 
         public void Show(Type viewModelType, Action<IUnityContainer> configureContainer,
@@ -126,17 +127,17 @@ namespace Anapher.Wpf.Toolkit.Windows
         {
             var window = Initialize(viewModelType, configureViewModel, configureWindow, configureContainer,
                 out viewModel);
-            window.Show(_window);
+            window.Show(Window);
         }
 
-        public bool? ShowDialog(VistaFileDialog fileDialog) => fileDialog.ShowDialog(_window as Window);
+        public bool? ShowDialog(VistaFileDialog fileDialog) => fileDialog.ShowDialog(Window as Window);
 
-        public bool? ShowDialog(FileDialog fileDialog) => fileDialog.ShowDialog(_window as Window);
+        public bool? ShowDialog(FileDialog fileDialog) => fileDialog.ShowDialog(Window as Window);
 
-        public bool? ShowDialog(VistaFolderBrowserDialog folderDialog) => folderDialog.ShowDialog(_window as Window);
+        public bool? ShowDialog(VistaFolderBrowserDialog folderDialog) => folderDialog.ShowDialog(Window as Window);
 
         public MessageBoxResult ShowMessageBox(string text, string caption, MessageBoxButton buttons,
             MessageBoxImage icon, MessageBoxResult defResult, MessageBoxOptions options) =>
-            MessageBoxEx.Show(_window as Window, text, caption, buttons, icon, defResult, options);
+            MessageBoxEx.Show(Window as Window, text, caption, buttons, icon, defResult, options);
     }
 }
