@@ -117,12 +117,7 @@ namespace Anapher.Wpf.Toolkit.Metro.Views
 
         public void Show(IWindow owner)
         {
-            if (owner is Window ownerWindow)
-            {
-                Left = ownerWindow.Left + (ownerWindow.ActualWidth - Width) / 2;
-                Top = ownerWindow.Top + (ownerWindow.ActualHeight - Height) / 2;
-            }
-
+            Owner = owner as Window;
             Show();
         }
 
