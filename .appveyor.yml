@@ -1,0 +1,16 @@
+image: Visual Studio 2019 Preview
+
+install:
+  - cinst fake
+
+build_script:
+  - cmd: fake.exe run build.fsx --parallel 3
+
+artifacts:
+- path: \artifacts\*.nupkg
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: 7IfAdhZrLxa2drPAEqfqmcckl8zw1Ui2Bkh6fqOfwpOLIItBuoPUbbhtHhPFuhO0
+  artifact: \artifacts\*.nupkg

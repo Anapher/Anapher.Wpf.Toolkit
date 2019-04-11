@@ -1,13 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <UseWPF>true</UseWPF>
     <LangVersion>latest</LangVersion>
+    <UseWPF>true</UseWPF>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <Description>This packages contains extensions of Anapher.Wpf.Toolkit for MahApps.Metro.</Description>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Resources\Light.xaml" />
-    <None Remove="Resources\Themes\Dark.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="1.6.5" />
@@ -16,49 +15,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Anapher.Wpf.Toolkit\Anapher.Wpf.Toolkit.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- XAML elements -->
-    <Compile Update="**\*.xaml.cs" SubType="Code" DependentUpon="%(Filename)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DependentUpon>Resources - Copy.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.de.resx">
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Resources\Themes\Dark.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Update="Resources\Themes\Light.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
+  
 </Project>

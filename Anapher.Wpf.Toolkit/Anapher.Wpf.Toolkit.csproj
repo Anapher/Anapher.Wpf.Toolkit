@@ -4,17 +4,13 @@
     <TargetFramework>net45</TargetFramework>
     <LangVersion>latest</LangVersion>
     <UseWPF>true</UseWPF>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <Description>This package provides essential class for Wpf/Prism.</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Ookii.Dialogs.Wpf" Version="1.0.0" />
     <PackageReference Include="Prism.Unity" Version="7.1.0.431" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
+  
 </Project>
