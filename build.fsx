@@ -33,9 +33,6 @@ open Fake.Core.TargetOperators
 
 "Cleanup"
   ==> "Build Toolkit"
-  ==> "All"
-
-"Cleanup"
   ==> "Build Toolkit.Metro"
   ==> "All"
 
